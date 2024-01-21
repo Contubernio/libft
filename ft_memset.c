@@ -6,21 +6,22 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:38:53 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/09 11:55:04 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:46:42 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *str, int c, unsigned long n)
+#include "libft.h"
 
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*pstr;
 
-	pstr = str;
-	while (n--)
+	pstr = b;
+	while (len--)
 	{
 		*pstr++ = (unsigned char) c;
 	}
-	return (str);
+	return (b);
 }
 
 //la funcion memset establece los primeros N bytes 

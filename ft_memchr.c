@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:48:58 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/15 18:02:36 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/21 17:28:46 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	size_t	count;
-	char	*buffer;
+	size_t			count;
+	unsigned char	*caststr;
 
-	buffer = (char *)str;
+	caststr = (unsigned char *)str;
 	count = 0;
 	while (count < n)
 	{
-		if (buffer[count] == c)
-			return (buffer + count);
+		if (caststr[count] == (unsigned char)c)
+			return (caststr + count);
 		count++;
 	}
 	return (NULL);

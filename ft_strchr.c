@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:15:38 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/09 16:28:41 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/21 18:39:15 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	unsigned char	*mstr;
 
 	mstr = (unsigned char *)s;
-	while (*mstr != c)
+	while (*mstr != (unsigned char)c)
 	{
 		if (*mstr == '\0')
 			return (NULL);

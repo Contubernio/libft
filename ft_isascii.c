@@ -6,13 +6,13 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:34:59 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/15 18:02:33 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:58:34 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return (c);
+		return (1);
 	return (0);
 }

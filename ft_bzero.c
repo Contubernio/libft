@@ -6,20 +6,20 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:12:16 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/15 18:02:28 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:52:57 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *b, unsigned long len)
+void	ft_bzero(void *b, size_t n)
 {
-	unsigned char	*p;
-	unsigned long	i;
+	char	*p;
+	size_t	i;
 
-	p = b;
+	p = (char *)b;
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
 		p[i] = 0;
 		i++;

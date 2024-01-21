@@ -6,13 +6,15 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:32:26 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/09 11:34:37 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:53:59 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i] != '\0')

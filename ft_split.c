@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:55:16 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/17 19:59:35 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/19 11:51:00 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	*ft_count_words(char const *s, char c)
 	}
 	return (count);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	int	*res;
@@ -59,3 +59,4 @@ int	main(int argc, char **argv)
 	printf("%d\n", res[3]);
 }
 
+*/
