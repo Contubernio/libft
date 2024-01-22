@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:55:16 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/17 19:08:17 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/22 12:33:45 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,19 @@
 static int	ft_count_words(char const *s, char c)
 {
 	int	i;
-	int	count;
 	int	cword;
-	int clet;
 
 	i = 0;
-	clet = 0;
 	cword = 0;
+	if (s[0] == '\0')
+		return (0);
+	if (s[0] != c)
+		cword = 1;
 	while (s[i] != '\0')
 	{
-		if (s[0] != c)
-		{
-			clet++;
-			i++;
-		}
-		else
-			i++;
-		while (s[i] != c && s[i - 1] != c && s[i] != '\0')
-		{
-			clet++;
-			i++;
-		}
-		if (s[i - 1] != c)
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
 			cword++;
-		clet = 0;
+		i++;
 	}
 	return (cword);
 }
@@ -48,9 +37,13 @@ int	main(int argc, char **argv)
 {
 	int	res;
 
-	(void)argc;
+	if (argc != 3)
+	{
+		fprintf(stderr, "Error: debe proporcionar dos argumentos.\n");
+		fprintf(stderr, "Uso: %s <cadena> <delimitador>\n", argv[0]);
+		return (1);
+	}
 	res = ft_count_words(argv[1], argv[2][0]);
-
-	printf("%d\n", res);
+	printf("La cantidad de palabras es: %d\n", res);
+	return (0);
 }
-
