@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:47:39 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/21 18:23:10 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/22 20:22:36 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -35,13 +36,13 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strstr(char *src, char *to_find);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strstr(char *src, char *to_find);
-void	ft_bzero(void *b, unsigned long len);
+void	ft_bzero(void *b, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *str, int c, unsigned long n);
 void	*ft_memcpy(void *dst, const void *src, unsigned long n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *str, int c, size_t n);
-size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
 
