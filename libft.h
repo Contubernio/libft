@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:47:39 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/22 20:22:36 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/23 20:36:28 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,14 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strstr(char *src, char *to_find);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strstr(char *src, char *to_find);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	**ft_split(char const *s, char c);
 void	ft_bzero(void *b, size_t n);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *str, int c, unsigned long n);
 void	*ft_memcpy(void *dst, const void *src, unsigned long n);

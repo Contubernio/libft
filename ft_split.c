@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 17:55:16 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/22 19:54:21 by albealva         ###   ########.fr       */
+/*   Created: 2024/01/22 20:12:53 by albealva          #+#    #+#             */
+/*   Updated: 2024/01/23 19:32:09 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-static void	ft_strncpy(char *dst, const char *src, size_t n)
+
+static void	*ft_malloc(size_t size)
 {
-	while (n > 0 && *src != '\0')
-	{
-		*dst++ = *src++;
-		n--;
-	}
-	if (n > 0)
-	{
-		while (n-- > 0)
-			*dst++ = '\0';
-	}
+	void	*mem;
+
+	mem = malloc(size);
+	if (!mem)
+		return (NULL);
+	return (mem);
 }
 
 static int	ft_count_words(char const *s, char c)
@@ -47,7 +44,6 @@ static int	ft_count_words(char const *s, char c)
 	}
 	return (cword);
 }
-
 
 static void	ft_find_word_positions(char const *s, char c, int *point)
 {
@@ -78,50 +74,73 @@ static void	ft_find_word_positions(char const *s, char c, int *point)
 	}
 }
 
-static void	*ft_malloc(size_t size)
+static char	**ft_free_split(char **split)
 {
-	void	*mem;
-	size_t	i;
-
-	i = 0;
-	mem = malloc(size);
-	if (!mem)
-		return (NULL);
-	while (i < size)
-	{
-		((unsigned char *)mem)[i] = 0;
-		i++;
-	}
-	return (mem);
-}
-
-int	main(int argc, char **argv)
-{
-	int	res;
-	int	*reslet;
 	int	i;
 
-	if (argc != 3)
+	if (split)
 	{
-		fprintf(stderr, "Error: debe proporcionar dos argumentos.\n");
-		fprintf(stderr, "Uso: %s <cadena> <delimitador>\n", argv[0]);
-		return (1);
+		i = 0;
+		while (split[i])
+		{
+			free(split[i]);
+			i++;
+		}
+		free(split);
 	}
-	res = ft_count_words(argv[1], argv[2][0]);
-	//reslet = ft_malloc(sizeof(int) * res);
-	reslet = ft_malloc(sizeof(int) * ((res * 2) + 1));
-	if (!reslet)
-	{
-		fprintf(stderr, "Error al asignar memoria.\n");
-		return (2);
-	}
-	ft_find_word_positions(argv[1], argv[2][0], reslet);
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		*positions;
+	int		word_count;
+	char	**split;
+	int		i;
+
+	word_count = ft_count_words(s, c);
+	split = (char **)ft_malloc(sizeof(char *) * (word_count + 1));
+	if (!split)
+		return (NULL);
+	positions = (int *)ft_malloc(sizeof(int) * word_count * 2);
+	if (!positions)
+		return (ft_free_split(split));
+	ft_find_word_positions(s, c, positions);
 	i = 0;
-	while (reslet[i])
+	while (i < word_count)
 	{
-		printf("Longitud de la palabra %d es: %d\n", i + 1, reslet[i]);
+		split[i] = ft_substr(s, (unsigned int)positions[i * 2],
+				(size_t)(positions[i * 2 + 1] - positions[i * 2] + 1));
+		if (!split[i])
+			return (ft_free_split(split));
 		i++;
 	}
-	free(reslet); // No olvides liberar la memoria asignada
-	return (0);
+	split[word_count] = NULL;
+	free(positions);
+	return (split);
 }
+
+/*int	main(int argc, char **argv)
+{
+	char	**words;
+
+	if (argc == 3)
+	{
+		words = ft_split(argv[1], argv[2][0]);
+		if (words)
+		{
+			for (int i = 0; words[i] != NULL; i++)
+			{
+				printf("Palabra %d: %s\n", i, words[i]);
+				free(words[i]);
+			}
+			free(words);
+		}
+	}
+		else
+		{
+        	printf("Uso: %s <cadena> <delimitador>\n", argv[0]);
+    	}
+	return 0;
+}
+*/

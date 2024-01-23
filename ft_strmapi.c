@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:32:03 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/23 15:04:11 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:57:52 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
-static char increment_char(unsigned int i, char c)
+/*static char	increment_char(unsigned int i, char c)
 {
 	if (c != '\0')
 		c++;
@@ -52,14 +52,13 @@ static char increment_char(unsigned int i, char c)
 int main(void)
 {
     char const *s = "Hello World!";
-    char *modified_str;
+    char 		*modified_str;
 
     modified_str = ft_strmapi(s, increment_char);
-
     if (modified_str == NULL)
     {
         printf("Failed to allocate memory for 'modified_str'\n");
-        return 1;
+        return (1);
     }
     
     printf("Original string: %s\n", s);
@@ -68,3 +67,4 @@ int main(void)
     free(modified_str);
     return 0;
 }
+*/

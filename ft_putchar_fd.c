@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 18:46:35 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/23 18:52:43 by albealva         ###   ########.fr       */
+/*   Created: 2024/01/23 20:06:32 by albealva          #+#    #+#             */
+/*   Updated: 2024/01/23 20:30:06 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	len;
+	write(fd, &c, 1);
+}
 
-	(void)argc;
-	len = ft_strlen(argv[1]);
-	printf("%ld\n",len);
+/*
+int	main(void)
+{
+	ft_putchar_fd('H', 1);
 	return (0);
 }
+*/
