@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:56:02 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/21 18:36:45 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:02:47 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,12 @@ static char	*ft_ptnbrmem(int n, char *str)
 
 char	*ft_itoa(int n)
 {
-	int		i;
 	int		len;
 	char	*str;
 	char	*res;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	i = 0;
 	len = ft_len(n);
 	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
