@@ -90,23 +90,6 @@ static char	**ft_free_split(char **split)
 	return (NULL);
 }
 
-void	ft_falta_espacio(char **split, int word_count, int *positions)
-{
-	int	i;
-
-	i = 0;
-	while (i < word_count)
-	{
-		split[i] = ft_substr(s, (unsigned int)positions[i * 2],
-				(size_t)(positions[i * 2 + 1] - positions[i * 2] + 1));
-		if (!split[i])
-		{
-			free(positions);
-			return (ft_free_split(split));
-		}
-		i++;
-	}
-}
 char	**ft_split(char const *s, char c)
 {
 	int		*positions;
@@ -125,7 +108,18 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	}
 	ft_find_word_positions(s, c, positions);
-	ft_falta_espacio(split, word_count, positions);
+	i = 0;
+	while (i < word_count)
+	{
+		split[i] = ft_substr(s, (unsigned int)positions[i * 2],
+				(size_t)(positions[i * 2 + 1] - positions[i * 2] + 1));
+		if (!split[i])
+		{
+			free(positions);
+			return (ft_free_split(split));
+		}
+		i++;
+	}
 	split[word_count] = NULL;
 	free(positions);
 	return (split);
