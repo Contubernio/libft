@@ -6,16 +6,10 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 19:42:42 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/23 20:29:58 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:57:14 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-A cada carácter de la string ’s’, aplica la función
-’f’ dando como parámetros el índice de cada
-carácter dentro de ’s’ y la dirección del propio
-carácter, que podrá modificarse si es necesario.
-*/
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))

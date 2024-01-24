@@ -6,19 +6,9 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:32:03 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/23 19:57:52 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:57:50 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*Aplica la función f a cada carácter de la cadena pasada
-como argumento dando su índice como primer argumento para crear un
-Nueva cadena “fresca” (con malloc(3)) resultante de las sucesivas
-aplicaciones de f.
-Parám. #1 La cadena a mapear.
-Parám. #2 La función a aplicar a cada carácter de s y su índice.
-Valor de retorno La cadena "nueva" creada a partir de las 
-sucesivas aplicaciones de f.
-Funciones libc malloc(3)*/
 
 #include "libft.h"
 
