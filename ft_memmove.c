@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:30:26 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/09 16:00:50 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:48:14 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*d;
 	size_t	i;
 
+	if (!dst && !src)
+		return (0);
 	s = (char *)src;
 	d = (char *)dst;
 	i = 0;

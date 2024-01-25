@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:26:47 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/25 12:42:17 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:07:53 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	main(void)
 	printf("Enter a character: ");
 	scanf("%c", &ch);
 	result = ft_isdigit(ch);
-	printf("The character '%c' is %s.\n", ch, result ? "a digit" : "not a digit");
+	printf("The character '%c' 
+	is %s.\n", ch, result ? "a digit" : "not a digit");
 	return (0);
 }
 */

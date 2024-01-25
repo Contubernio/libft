@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:47:39 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/25 16:42:07 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:53:05 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_atoi(char *str);
-int	    ft_strncmp(char *s1, char *s2, unsigned int n);
+int		ft_strncmp(char *s1, char *s2, unsigned int n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_itoa(int n);
 char	*ft_strchr(const char *s, int c);
@@ -50,5 +50,6 @@ void	*ft_memchr(const void *str, int c, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 #endif

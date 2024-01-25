@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:15:38 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/25 15:56:40 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:09:01 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ int	main(void)
 
 	result = ft_strchr(str, character_to_find);
 	if (result)
-		printf("Character '%c' found at position: %s\n", character_to_find, result);
+		printf("Character '%c' found at position: %s\n",
+		 character_to_find, result);
 	else
-		printf("Character '%c' not found in the string.\n", character_to_find);
+		printf("Character '%c' not found in the string.\n", 
+		character_to_find);
 	return (0);
 }
 */

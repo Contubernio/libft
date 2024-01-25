@@ -12,113 +12,76 @@
 
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+static size_t	w_size(char const *s, int start, char c)
 {
-	int	i;
-	int	cword;
+	size_t	size;
 
-	i = 0;
-	cword = 0;
-	if (!s || s[0] == '\0')
-		return (0);
-	if (s[0] != c)
-		cword = 1;
-	while (s[i] != '\0')
+	size = 0;
+	while (s[start] && s[start] != c)
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
-			cword++;
-		i++;
+		size++;
+		start++;
 	}
-	return (cword);
+	return (size);
 }
 
-static void	ft_find_word_positions(char const *s, char c, int *point)
+static int	count_words(char const *s, char c)
 {
 	int	i;
-	int	j;
-	int	in_word;
+	int	words;
+	int	flag;
 
 	i = 0;
-	j = 0;
-	in_word = 0;
-	while (s[i] != '\0')
+	words = 0;
+	flag = 0;
+	while (s[i])
 	{
-		if (s[i] != c && in_word == 0)
+		if (s[i] != c && flag == 0)
 		{
-			point[j++] = i;
-			in_word = 1;
+			words++;
+			flag = 1;
 		}
-		else if (s[i] == c && in_word == 1)
-		{
-			point[j++] = i - 1;
-			in_word = 0;
-		}
+		else if (s[i] == c)
+			flag = 0;
 		i++;
 	}
-	if (in_word)
-	{
-		point[j] = i - 1;
-	}
+	return (words);
 }
 
-static char	**ft_free_split(char **split)
+static char	**error_free(char **str, int count)
 {
-	int	i;
-
-	if (split)
+	while (count >= 0)
 	{
-		i = 0;
-		while (split[i])
-		{
-			free(split[i]);
-			i++;
-		}
-		free(split);
+		free(str[count]);
+		count--;
 	}
+	free(str);
 	return (NULL);
-}
-
-static char	**ft_fe(char const *s, int *positions, int word_count, char **split)
-{
-	int	i;
-
-	i = 0;
-	while (i < word_count)
-	{
-		split[i] = ft_substr(s, (unsigned int)positions[i * 2],
-				(size_t)(positions[i * 2 + 1] - positions[i * 2] + 1));
-		if (!split[i])
-		{
-			free(positions);
-			return (ft_free_split(split));
-		}
-		i++;
-	}
-	return (split);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		*positions;
-	int		word_count;
-	char	**split;
 	int		i;
+	int		j;
+	char	**str;
 
-	word_count = ft_count_words(s, c);
-	split = (char **)malloc(sizeof(char *) * (word_count + 1));
-	if (!split)
+	str = malloc((sizeof (char *)) * (count_words(s, c) + 1));
+	if (!str)
 		return (NULL);
-	positions = (int *)malloc(sizeof(int) * word_count * 2);
-	if (positions == NULL)
+	i = 0;
+	j = 0;
+	while (j < count_words(s, c))
 	{
-		free (split);
-		return (NULL);
+		while (s[i] == c)
+			i++;
+		str[j] = ft_substr(s, i, w_size(s, i, c));
+		if (!str[j])
+			return (error_free(str, j));
+		j++;
+		i += w_size(s, i, c);
 	}
-	ft_find_word_positions(s, c, positions);
-	ft_fe(s, positions, word_count, split);
-	split[word_count] = NULL;
-	free(positions);
-	return (split);
+	str[j] = 0;
+	return (str);
 }
 
 /*

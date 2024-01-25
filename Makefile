@@ -6,7 +6,7 @@
 #    By: albealva <albealva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 11:37:24 by albealva          #+#    #+#              #
-#    Updated: 2024/01/23 20:36:57 by albealva         ###   ########.fr        #
+#    Updated: 2024/01/25 18:53:04 by albealva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ PACK 		= 	ft_atoi.c  \
 				ft_putstr_fd.c 							  \
 				ft_putendl_fd.c 						   \
 				ft_putnbr_fd.c 								\
+				ft_strnstr.c 								 \
 #================================directory======================================#
 DIR 	=		objects
 
