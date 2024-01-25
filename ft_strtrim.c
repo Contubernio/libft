@@ -48,3 +48,23 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = 0;
 	return (str);
 }
+
+/*
+int	main(void)
+{
+	const char	*str = "   Hello, World!   ";
+	const char	*trim_chars = " ";
+	char		*trimmed_str = ft_strtrim(str, trim_chars);
+
+	if(trimmed_str != NULL)
+	{
+    	printf("Trimmed string: '%s'\n", trimmed_str);
+		free(trimmed_str);
+	}
+	else
+	{
+		printf("Failed to trim string or nothing to trim.\n");
+	}
+	return (0);
+}
+*/

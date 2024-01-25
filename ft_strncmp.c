@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:44:09 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/15 20:11:45 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:11:10 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,21 @@ char	*ft_strstr(char *src, char *to_find)
 	}
 	return (0);
 }
+
+/*
+int	main(void)
+{
+	char	haystack[] = "I am a haystack with a needle.";
+	char	needle[] = "needle";
+	char 	*result = ft_strstr(haystack, needle);
+	if (result)
+	{
+		printf("Found: '%s'\n", result);
+	}
+	else
+	{
+		printf("Not found.\n");
+	}
+	return (0);
+}
+*/

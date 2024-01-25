@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:15:38 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/21 18:39:15 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:56:40 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,22 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *)mstr);
 }
+
+/*
+int	main(void)
+{
+	const char	*str = "Hello, world!";
+	int			character_to_find = 'o';
+	char 		*result;
+
+	result = ft_strchr(str, character_to_find);
+	if (result)
+		printf("Character '%c' found at position: %s\n", character_to_find, result);
+	else
+		printf("Character '%c' not found in the string.\n", character_to_find);
+	return (0);
+}
+*/
 /*
 DESCRIPTION
      The strchr() function locates the first occurrence of c (converted to a

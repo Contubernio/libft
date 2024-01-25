@@ -11,19 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-/*
-static void	*ft_malloc(size_t size)
-{
-	void	*mem;
 
-	mem = malloc(size);
-	if (!mem)
-		return (NULL);
-	return (mem);
-}
-*/
 static int	ft_count_words(char const *s, char c)
 {
 	int	i;
@@ -90,7 +78,7 @@ static char	**ft_free_split(char **split)
 	return (NULL);
 }
 
-void	ft_falta_espacio(char **split, int word_count, int *positions)
+static char	**ft_fe(char const *s, int *positions, int word_count, char **split)
 {
 	int	i;
 
@@ -106,7 +94,9 @@ void	ft_falta_espacio(char **split, int word_count, int *positions)
 		}
 		i++;
 	}
+	return (split);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	int		*positions;
@@ -125,7 +115,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	}
 	ft_find_word_positions(s, c, positions);
-	ft_falta_espacio(split, word_count, positions);
+	ft_fe(s, positions, word_count, split);
 	split[word_count] = NULL;
 	free(positions);
 	return (split);

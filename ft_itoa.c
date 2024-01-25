@@ -6,12 +6,11 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:56:02 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/23 15:02:47 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:46:13 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_len(int n)
 {

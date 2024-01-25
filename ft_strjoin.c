@@ -37,3 +37,24 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[j] = 0;
 	return (str);
 }
+
+/*
+int	main()
+{
+	char const	*string1 = "Hello, ";
+	char const	*string2 = "World!";
+	char		*joined;
+
+	joined = ft_strjoin(string1, string2);
+	if (joined)
+	{
+		printf("Joined string: %s\n", joined);
+		free(joined);
+	}
+	else
+	{
+		printf("Failed to join strings.\n");
+	}
+	return (0);
+}
+*/

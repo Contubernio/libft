@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:22:18 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/09 16:28:05 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:13:26 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,25 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
+/*
+int	main(void)
+{
+	const char	*s = "Example sentence with multiple e characters.";
+	int			c = 'e';
+	char		*result = ft_strrchr(s, c);
+
+	if (result)
+	{
+		printf("Last occurrence: '%s'\n", result);
+	}
+	else
+	{
+		printf("Character not found.\n");
+	}
+	return (0);
+}
+*/
 
 /*
 DESCRIPTION

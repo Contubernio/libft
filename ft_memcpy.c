@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:22:59 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/09 15:34:33 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:01:33 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,22 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+
+/*
+void *ft_memcpy(void *dst, const void *src, size_t n);
+
+int	main(void)
+{
+    const char	src[] = "Test string.";
+    char dst[20];
+
+    ft_memcpy(dst, src, sizeof(src));
+
+    printf("Destination buffer contains: '%s'\n", dst);
+
+    return 0;
+}
+*/
 //DESCRIPTION
 //The memcpy() function copies n bytes from memory area src 
 //to memory area dst.  If dst and src overlap, behavior is undefined. 

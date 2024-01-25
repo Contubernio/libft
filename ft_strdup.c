@@ -31,3 +31,24 @@ char	*ft_strdup(const char *s1)
 	str[i] = 0;
 	return (str);
 }
+
+/*
+int	main(void)
+{
+	const char	*original = "Sample string for duplication";
+	char		*duplicate;
+
+	duplicate = ft_strdup(original);
+	if (duplicate)
+	{
+		printf("Original: %s\n", original);
+		printf("Duplicate: %s\n", duplicate);
+		free(duplicate);
+	}
+	else
+	{
+		printf("Failed to duplicate string.\n");
+	}
+	return (0);
+}
+*/

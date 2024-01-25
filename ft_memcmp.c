@@ -34,6 +34,24 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 }
 
 /*
+int	main(void)
+{
+	const char *str1 = "Hello World";
+    const char *str2 = "Hello world";
+    int result;
+
+    result = ft_memcmp(str1, str2, 11);
+    if(result > 0) {
+        printf("String 1 is greater than string 2.\n");
+    } else if(result < 0) {
+        printf("String 2 is greater than string 1.\n");
+    } else {
+        printf("String 1 is equal to string 2.\n");
+    }
+    return (0);
+}
+*/
+/*
 SYNOPSIS
        #include <string.h>
 

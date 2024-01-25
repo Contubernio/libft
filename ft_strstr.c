@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:09:22 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/15 18:36:25 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:15:58 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,21 @@ char	*ft_strstr(char *src, char *to_find)
 	}
 	return (0);
 }
+
+/*
+int	main(void)
+{
+	char	haystack[] = "This is a simple string";
+	char	needle[] = "simple";
+	char	*result = ft_strstr(haystack, needle);
+	if (result != NULL)
+	{
+		printf("Substring found: %s\n", result);
+	}
+	else
+	{
+		printf("Substring not found.\n");
+	}
+	return (0);
+}
+*/
