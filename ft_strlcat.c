@@ -6,7 +6,7 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:12:47 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/25 16:05:21 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:38:22 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dst_len + src_len);
 }
 
+/*
 int	main()
 {
 	char		dst[20] = "Hello";
@@ -45,3 +46,4 @@ int	main()
 	printf("Destination string: '%s'\n", dst);
 	return (0);
 }
+*/

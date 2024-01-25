@@ -6,48 +6,38 @@
 /*   By: albealva <albealva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:44:09 by albealva          #+#    #+#             */
-/*   Updated: 2024/01/25 16:11:10 by albealva         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:43:15 by albealva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char *src, char *to_find)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
 
 	i = 0;
-	if (to_find[0] == '\0')
-		return (src);
-	while (src[i] != '\0')
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
 	{
-		j = 0;
-		while (src[i + j] != '\0' && src[i + j] == to_find[j])
-		{
-			if (to_find[j + 1] == '\0')
-				return (&src[i]);
-			j++;
-		}
-		i++;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		++i;
 	}
+	if (i != n)
+		return (s1[i] - s2[i]);
 	return (0);
 }
 
 /*
 int	main(void)
 {
-	char	haystack[] = "I am a haystack with a needle.";
-	char	needle[] = "needle";
-	char 	*result = ft_strstr(haystack, needle);
-	if (result)
-	{
-		printf("Found: '%s'\n", result);
-	}
-	else
-	{
-		printf("Not found.\n");
-	}
+	char	*str1 = "Hello, World!";
+    char	*str2 = "Hello, World!";
+	char	*str3 = "Hello, there!";
+
+	printf("Comparing '%s' and '%s': %d\n", str1, str2, ft_strncmp(str1, str2, 5));
+	printf("Comparing '%s' and '%s': %d\n", str1, str3, ft_strncmp(str1, str3, 5));
+	printf("Comparing '%s' and '%s': %d\n", str1, str3, ft_strncmp(str1, str3, 7));
 	return (0);
 }
 */
